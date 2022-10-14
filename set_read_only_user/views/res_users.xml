@@ -1,0 +1,18 @@
+<odoo>
+    <record id="user_form_inherit_view" model="ir.ui.view">
+        <field name="name">User Form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <field name="set_read_only_access" invisible="1"/>
+                 <button name="toggle_read_only" type="object"
+                    class="oe_stat_button" icon="fa-eye" attrs="{'invisible':[('set_read_only_access','=',True)]}"> Set Read Only
+                 </button>
+                <button name="toggle_read_only" type="object"
+                    class="oe_stat_button" icon="fa-eye-slash" attrs="{'invisible':[('set_read_only_access','=',False)]}"> Unset Read Only
+                </button>
+            </div>
+        </field>
+    </record>
+</odoo>
